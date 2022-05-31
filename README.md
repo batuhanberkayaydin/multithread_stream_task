@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* OpenCV
+* OpenCV 4.x.x
 * Pthread
 
 ## Build and Run
