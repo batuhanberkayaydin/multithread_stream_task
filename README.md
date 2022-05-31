@@ -15,3 +15,5 @@ make -j(max_core_number-1)
 ```
 Could be changed in "config.json" file buffer size, random starting and ending mseconds etc.
 ```
+
+NOTE :  I used Lab color channel for calculating intensity. Lab channel gives more information about images. For that reason I used it.
