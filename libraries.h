@@ -14,6 +14,10 @@
 #include <thread>
 #include <mutex>
 #include <chrono>
+#include <vector>
+#include <time.h>
+#include "fstream"
+#include "json.hpp"
 
 
 #endif // LIBRARIES_H

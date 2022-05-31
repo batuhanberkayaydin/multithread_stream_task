@@ -5,20 +5,27 @@
  * 
  */
 #include "workerTwo.h"
+#include "config.h"
 
 /**
  * @brief Construct a new worker Two::worker Two object
  * 
  */
 workerTwo::workerTwo() {
+    configParams getConfigParams;
+    nlohmann::json w2Params = getConfigParams.getParams();
 
-    timeOutMsec_ = 1000000;
+    timeOutMsec_ = w2Params["timeOutMillisecond"];
+    imageCropFactor_ = w2Params["cropImageFrom"];
+    randomStart_ = w2Params["randomStart"];
+    randomEnd_ = w2Params["randomEnd"];
+
     isFrameProcessed_ = false;
     showCurrentFrame_ = false;
     int labColorCode_ = 44; // COLOR_BGR2Lab
     int hsvColorCode_ = 40; // COLOR_BGR2HSV
 
-    imageCropFactor_ = 0.5;
+
     
 }
 
@@ -58,7 +65,7 @@ int workerTwo::randomNumberGenerator(int numberOne, int numberTwo){
     
     std::random_device rd; 
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distr(500, 1500);
+    std::uniform_int_distribution<> distr(randomStart_, randomEnd_);
 
     return int(distr(gen));
 }

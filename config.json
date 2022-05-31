@@ -1,0 +1,9 @@
+{
+    "bufferSize": 10,
+    "rotationCheckCount": 5,
+    "timeOutMillisecond": 1000000,
+    "cropImageFrom": 0.5,
+    "imageType": "LAB",
+    "randomStart": 500,
+    "randomEnd": 1500
+  }

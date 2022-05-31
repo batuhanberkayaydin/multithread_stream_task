@@ -30,13 +30,19 @@ private:
     void LogitechFrameProcessingMagic2(cv::Mat image);
     int randomNumberGenerator(int numberOne, int numberTwo);
 
-    int imageHeight_;
+    int colorCode_;
     int imageWidth_;
+    int imageHeight_;
+    int randomStart_;
+    int randomEnd_;
     int channels_ = 3;
-    double imageCropFactor_ ;
     int  timeOutMsec_;
+    double imageCropFactor_ ;
+    
+    bool imageType_;
     bool isFrameProcessed_;
-    bool showCurrentFrame_;
+    bool showCurrentFrame_;    
+    bool isColorConvert_;
 
     std::mutex startMutex_;
     std::mutex finishMutex_;
@@ -59,8 +65,6 @@ private:
     double maximum_;
     double intensityVal_;
 
-    int randomStart_;
-    int randomEnd_;
     
 };
 

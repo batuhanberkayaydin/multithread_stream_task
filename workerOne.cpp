@@ -5,17 +5,22 @@
  * 
  */
 #include "workerOne.h"
+#include "config.h"
 
 /**
  * @brief Construct a new worker One::worker One object
  * 
  */
 workerOne::workerOne() {
+    configParams getConfigParams;
+    nlohmann::json w1Params = getConfigParams.getParams(); 
 
-    bufferSize_ = 10;
+    bufferSize_ = w1Params["bufferSize"];
+    rotateChecker_ = w1Params["rotationCheckCount"];
+    
+
     rotationAngle_ = -1 ;
     counter_ = 0 ;
-    rotateChecker_ = 5 ;
 
     passSecondFrame_ = false ;
     stopProcess_ = false;
